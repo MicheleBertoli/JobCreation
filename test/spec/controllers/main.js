@@ -16,7 +16,33 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a list of locations to the scope', function () {
+    expect(scope.locations.length).toBe(3);
+  });
+
+  it('should initialize the location', function () {
+    scope.init();
+    expect(scope.location).toBe('flat');
+  });
+
+  it('should move throught locations', function () {
+    scope.init();
+    scope.changeLocation();
+    expect(scope.location).toBe('house');
+  });
+
+  it('should attach a list of products to the scope', function () {
+    expect(scope.products.length).toBe(2);
+  });
+
+  it('should initialize the product', function () {
+    scope.init();
+    expect(scope.product).toBe('I have cleaning products');
+  });
+
+  it('should move throught locations', function () {
+    scope.init();
+    scope.changeProduct();
+    expect(scope.product).toBe('I don\'t have cleaning products');
   });
 });

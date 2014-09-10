@@ -1,4 +1,4 @@
-<article id="job-creation">
+<article id="job-creation" ng-init="init()">
   <header>
     <span class="glyphicon glyphicon-chevron-left"></span>
     What do you need?
@@ -6,8 +6,8 @@
   </header>
   <p>
     Clean my
-    <span class="selectable">
-      flat
+    <span class="selectable" ng-click="changeLocation()">
+      {{location}}
     </span>
     <span class="selectable">
       <input type="text" placeholder="+description">
@@ -24,8 +24,8 @@
       <span class="glyphicon glyphicon-time"></span>
       no location
     </span>
-    <span class="selectable">
-      I have cleaning products
+    <span class="selectable" ng-click="changeProduct()">
+      {{product}}
     </span>
   </p>
   <footer>

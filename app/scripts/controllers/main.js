@@ -9,9 +9,31 @@
  */
 angular.module('jobCreationApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+
+    $scope.locations = [
+      'flat',
+      'house',
+      'room'
     ];
+    $scope.locationsCounter = -1;
+
+    $scope.changeLocation = function () {
+      $scope.location = $scope.locations[++$scope.locationsCounter % $scope.locations.length];
+    };
+
+    $scope.products = [
+      'I have cleaning products',
+      'I don\'t have cleaning products'
+    ];
+    $scope.productsCounter = -1;
+
+    $scope.changeProduct = function () {
+      $scope.product = $scope.products[++$scope.productsCounter % $scope.products.length];
+    };
+
+    $scope.init = function () {
+      $scope.changeLocation();
+      $scope.changeProduct();
+    };
+
   });
