@@ -19,6 +19,7 @@ body
 	font-size: 30px;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
 }
 
 #job-creation
@@ -56,6 +57,15 @@ body
 	{
 		margin-top: @headerHeight + 10px;
 		line-height: 55px;
+		transition: all .5s;
+		transform: scale(1.2);
+		opacity: 0;
+
+		&.loaded
+		{
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 
 	input

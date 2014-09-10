@@ -8,7 +8,7 @@
  * Controller of the jobCreationApp
  */
 angular.module('jobCreationApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $timeout) {
 
     $scope.locations = [
       'flat',
@@ -32,6 +32,9 @@ angular.module('jobCreationApp')
     };
 
     $scope.init = function () {
+      $timeout(function () {
+         $scope.loaded = true;
+      });
       $scope.changeLocation();
       $scope.changeProduct();
     };
