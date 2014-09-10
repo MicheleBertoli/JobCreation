@@ -1,2 +1,128 @@
 
 @import "../../bower_components/bootstrap/less/bootstrap.less";
+
+@white: #fff;
+
+@background: #f2594b; 
+@header: #f06e61;
+@selectable: #f57b70; 
+@buttons: #d13f32;
+@border: darken(@buttons, 10%);
+
+@headerHeight: 44px;
+
+body
+{
+	color: @white;
+	background-color: @background;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+#job-creation
+{
+	header
+	{
+		.text-center;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		left: 0px;
+		line-height: @headerHeight;
+		background-color: @header;
+		font-size: 18px;
+		padding: 0px 15px;
+		border-bottom: 1px solid @border;
+
+		.glyphicon
+		{
+			line-height: @headerHeight;
+		}
+
+		.glyphicon-chevron-left
+		{
+			.pull-left;
+		}
+
+		.glyphicon-share-alt
+		{
+			.pull-right;
+		}
+	}
+
+	p
+	{
+		margin-top: @headerHeight + 10px;
+		line-height: 55px;
+	}
+
+	input
+	{
+		width: 100%;
+		background-color: transparent;
+		border: 0px;
+		outline: 0px;
+
+		&::-webkit-input-placeholder 
+		{
+			color: @white;
+		}
+	}
+
+	.selectable
+	{
+		display: inline-block;
+		padding: 0px 10px;
+		line-height: 45px;
+		background-color: @selectable;
+		border-radius: 5px;
+	}
+
+	.button
+	{
+		cursor: pointer;
+
+		&:active
+		{
+			color: @selectable;
+			background-color: @white;
+		}
+	}
+
+	.glyphicon-time
+	{
+		font-size: 22px;
+	}
+
+	footer
+	{
+		padding: 0px 15px;
+		position: fixed;
+		right: 0px;
+		bottom: 10px;
+		left: 0px;
+	}
+
+	#included
+	{
+		.text-center;
+		line-height: 30px;
+		background-color: @buttons;
+		font-size: 16px;
+		margin: 0px -15px 10px -15px;
+	}
+
+	button
+	{
+		.btn;
+		.btn-block;
+		text-transform: uppercase;
+		background-color: @buttons;
+		border-bottom: 2px solid @border;
+		line-height: 35px;
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
