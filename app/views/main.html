@@ -4,13 +4,16 @@
     What do you need?
     <span class="glyphicon glyphicon-share-alt"></span>
   </header>
+  <span id="counter">
+    {{description.length ? 300 - description.length : ''}}
+  </span>
   <p ng-class="{loaded: loaded}">
     Clean my
     <span class="selectable change" ng-click="changeLocation()">
       {{location}}
     </span>
     <span class="selectable">
-      <input type="text" placeholder="+description">
+      <input type="text" placeholder="+description" ng-model="description">
     </span>
     <span class="selectable button">
       <span class="glyphicon glyphicon-camera"></span>
